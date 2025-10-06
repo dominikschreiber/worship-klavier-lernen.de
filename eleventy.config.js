@@ -1,7 +1,7 @@
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { hash } from 'node:crypto';
-import { writeFile, readFile, rm, access, rename } from 'node:fs/promises';
+import { writeFile, readFile, rm, access, mkdir } from 'node:fs/promises';
 import { optimize } from 'svgo';
 
 const execFileAsync = promisify(execFile);
@@ -10,6 +10,8 @@ const SECONDS = 1000;
 const MINUTES = 60 * SECONDS;
 const HOURS = 60 * MINUTES;
 const DAYS = 24 * HOURS;
+
+const LILYPOND_DIR = '_lilypond';
 
 function durationToString(ms) {
   return ms > DAYS ? `${Math.floor(ms / DAYS)}d ${durationToString(ms - Math.floor(ms / DAYS) * DAYS)}`
@@ -27,9 +29,15 @@ export default function (eleventyConfig) {
   eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {
     const before = new Date();
 
-    const lyFile = `_lilypond/${id}.ly`;
-    const svgFile = `_lilypond/${id}.svg`;
-    const croppedSvgFile = `_lilypond/${id}.cropped.svg`;
+    try {
+      await access(LILYPOND_DIR);
+    } catch {
+      await mkdir(LILYPOND_DIR, { recursive: true });
+    }
+
+    const lyFile = `${LILYPOND_DIR}/${id}.ly`;
+    const svgFile = `${LILYPOND_DIR}/${id}.svg`;
+    const croppedSvgFile = `${LILYPOND_DIR}/${id}.cropped.svg`;
 
     let shouldWriteLy = true;
     let shouldExec = true;
@@ -63,7 +71,7 @@ export default function (eleventyConfig) {
     let svgContent;
 
     if (shouldExec) {
-      await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `_lilypond/${id}`, `_lilypond/${id}.ly`]);
+      await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `${LILYPOND_DIR}/${id}`, `${LILYPOND_DIR}/${id}.ly`]);
       const croppedSvgContent = await readFile(croppedSvgFile, 'utf-8');
       svgContent = optimize(croppedSvgContent, { path: svgFile }).data;
       await Promise.all([
