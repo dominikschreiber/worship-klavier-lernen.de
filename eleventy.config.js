@@ -2,6 +2,7 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { hash } from 'node:crypto';
 import { writeFile, readFile, rm, access, rename } from 'node:fs/promises';
+import { optimize } from 'svgo';
 
 const execFileAsync = promisify(execFile);
 
@@ -56,13 +57,21 @@ export default function (eleventyConfig) {
       shouldExec = true;
     }
 
+    let svgContent;
+
     if (shouldExec) {
       await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `_lilypond/${id}`, `_lilypond/${id}.ly`]);
-      await rm(svgFile);
-      await rename(croppedSvgFile, svgFile);
+      const croppedSvgContent = await readFile(croppedSvgFile, 'utf-8');
+      svgContent = optimize(croppedSvgContent, { path: svgFile }).data;
+      await Promise.all([
+        writeFile(svgFile, svgContent),
+        rm(croppedSvgFile)
+      ]);
     }
 
-    const svgContent = readFile(svgFile, 'utf-8');
+    if (!svgContent) {
+      svgContent = readFile(svgFile, 'utf-8');
+    }
 
     console.log(`${shouldWriteLy ? '📦 compiled' : shouldExec ? '♻️ recompiled' : '☕️ served'} ${id}.ly in ${durationToString(new Date().valueOf() - before.valueOf())}`);
 
