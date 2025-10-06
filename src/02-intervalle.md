@@ -1,4 +1,14 @@
-# 02 Intervalle
+---
+title: Intervalle
+layout: page.njk
+---
+
+## Impuls
+
+> Denn alle Schrift, von Gott eingegeben, ist nütze zur Lehre, zur Zurechtweisung, zur Besserung, zur Erziehung in der Gerechtigkeit, dass der Mensch Gottes vollkommen sei, zu allem guten Werk geschickt.  
+> (2. Timotheus 3,16-17)
+
+## Theorie
 
 {% lilypond "prim" %}
 \score {

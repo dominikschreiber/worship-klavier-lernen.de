@@ -1,4 +1,14 @@
-# 01 Töne
+---
+title: Töne
+layout: page.njk
+---
+
+## Impuls
+
+> So will auch ich dir danken mit Saitenspiel für deine Treue, mein Gott; ich will dir zur Harfe lobsingen du Heiliger Israels.  
+> (Psalm 71,22)
+
+## Theorie
 
 {% lilypond "töne" %}
 \score {
