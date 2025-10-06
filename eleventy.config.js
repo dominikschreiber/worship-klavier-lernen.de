@@ -5,27 +5,67 @@ import { writeFile, readFile, rm, access, rename } from 'node:fs/promises';
 
 const execFileAsync = promisify(execFile);
 
+const SECONDS = 1000;
+const MINUTES = 60 * SECONDS;
+const HOURS = 60 * MINUTES;
+const DAYS = 24 * HOURS;
+
+function durationToString(ms) {
+  return ms > DAYS ? `${Math.floor(ms / DAYS)}d ${durationToString(ms - Math.floor(ms / DAYS) * DAYS)}`
+    : ms > HOURS ? `${Math.floor(ms / HOURS)}h ${durationToString(ms - Math.floor(ms / HOURS) * HOURS)}`
+      : ms > MINUTES ? `${Math.floor(ms / MINUTES)}m ${durationToString(ms - Math.floor(ms / MINUTES) * MINUTES)}`
+        : ms > SECONDS ? `${Math.floor(ms / SECONDS)}s ${durationToString(ms - Math.floor(ms / SECONDS) * SECONDS)}`
+          : `${ms}ms`;
+}
+
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory('src');
   eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {
-    try {
-      await access(`_lilypond/${id}.ly`);
-    } catch {
-      await writeFile(`_lilypond/${id}.ly`, content);
-    }
+    const before = new Date();
 
-    let svg = null;
+    const lyFile = `_lilypond/${id}.ly`;
+    const svgFile = `_lilypond/${id}.svg`;
+    const croppedSvgFile = `_lilypond/${id}.cropped.svg`;
+
+    let shouldWriteLy = true;
+    let shouldExec = true;
+
     try {
-      svg = await readFile(`_lilypond/${id}.svg`, 'utf-8');
-    } catch {
-      const { stderr } = await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `_lilypond/${id}`, `_lilypond/${id}.ly`]);
-      if (!stderr) {
-        await rm(`_lilypond/${id}.svg`);
-        await rename(`_lilypond/${id}.cropped.svg`, `_lilypond/${id}.svg`);
+      const lyContent = await readFile(lyFile, 'utf-8');
+
+      if (lyContent) {
+        const lyHash = hash('sha256', lyContent);
+        const contentHash = hash('sha256', content);
+
+        if (lyHash === contentHash) {
+          shouldWriteLy = false;
+          shouldExec = false;
+        }
       }
-      svg = await readFile(`_lilypond/${id}.svg`, 'utf-8');
+    } catch { }
+
+    if (shouldWriteLy) {
+      await writeFile(lyFile, content);
     }
 
-    return svg;
+    try {
+      if (!shouldExec) {
+        await access(svgFile);
+      }
+    } catch {
+      shouldExec = true;
+    }
+
+    if (shouldExec) {
+      await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `_lilypond/${id}`, `_lilypond/${id}.ly`]);
+      await rm(svgFile);
+      await rename(croppedSvgFile, svgFile);
+    }
+
+    const svgContent = readFile(svgFile, 'utf-8');
+
+    console.log(`${shouldWriteLy ? '📦 compiled' : shouldExec ? '♻️ recompiled' : '☕️ served'} ${id}.ly in ${durationToString(new Date().valueOf() - before.valueOf())}`);
+
+    return svgContent;
   });
 }
