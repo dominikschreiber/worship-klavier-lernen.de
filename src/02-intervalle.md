@@ -1,57 +1,89 @@
 # 02 Intervalle
 
-{% lilypond %}
+{% lilypond "prim" %}
 \score {
   \relative c' {
-    c4 c
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c c>1
   }
 }
 {% endlilypond %}
 
-{% lilypond %}
+{% lilypond "sekund" %}
 \score {
   \relative c' {
-    c4 d
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c d>1
   }
 }
 {% endlilypond %}
 
-{% lilypond %}
+{% lilypond "terz" %}
 \score {
   \relative c' {
-    c4 e
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c e>1
   }
 }
 {% endlilypond %}
 
-{% lilypond %}
+{% lilypond "quart" %}
 \score {
   \relative c' {
-    c4 f
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c f>1
   }
 }
 {% endlilypond %}
 
-{% lilypond %}
+{% lilypond "quint" %}
 \score {
   \relative c' {
-    c4 g
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c g'>1
   }
 }
 {% endlilypond %}
 
-{% lilypond %}
+{% lilypond "sext" %}
 \score {
   \relative c' {
-    c4 b
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c a'>1
   }
 }
 {% endlilypond %}
 
-{% lilypond %}
+{% lilypond "septim" %}
 \score {
   \relative c' {
-    c4 c'
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c b'>1
+  }
+}
+{% endlilypond %}
+
+{% lilypond "oktav" %}
+\score {
+  \relative c' {
+    \omit Staff.Clef
+    \omit Staff.KeySignature
+    \override Score.TimeSignature.transparent = ##t
+    <c c'>1
   }
 }
 {% endlilypond %}
