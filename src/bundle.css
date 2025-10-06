@@ -1,0 +1,31 @@
+:root {
+  color-scheme: light dark;
+
+  --text-color: light-dark(#000005, #fafaff);
+  --body-bg: oklch(from var(--text-color) calc(1 - 0.9 * l) c h);
+
+  --blockquote-bg-opacity: 5%;
+  --blockquote-bg: oklch(from var(--text-color) l c h / var(--blockquote-bg-opacity));
+}
+
+body {
+  margin: 0 auto;
+  max-width: 90ch;
+  color: var(--text-color);
+  background-color: var(--body-bg);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+p {
+  line-height: 1.5;
+}
+
+blockquote {
+  margin: 0;
+  padding-block-start: 1em;
+  padding-block-end: 1em;
+  padding-inline-start: 40px;
+  padding-inline-end: 40px;
+  border-radius: .25rem;
+  background-color: var(--blockquote-bg);
+}
