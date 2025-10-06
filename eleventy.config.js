@@ -1,29 +1,31 @@
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { randomUUID } from 'node:crypto';
-import { writeFile, readFile, rm } from 'node:fs/promises';
-
-import memoize from 'memoize';
+import { hash } from 'node:crypto';
+import { writeFile, readFile, rm, access, rename } from 'node:fs/promises';
 
 const execFileAsync = promisify(execFile);
 
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory('src');
-  eleventyConfig.addPairedAsyncShortcode('lilypond', memoize(async content => {
-    const uuid = randomUUID();
-
-    await writeFile(`${uuid}.ly`, content);
-
-    const { stderr } = await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', uuid, `${uuid}.ly`]);
-
-    const svg = stderr ? null : await readFile(`${uuid}.cropped.svg`, 'utf-8');
-
-    await Promise.all([rm(`${uuid}.ly`), rm(`${uuid}.svg`), rm(`${uuid}.cropped.svg`)]);
-
-    if (svg) {
-      return svg;
-    } else {
-      throw new Error(stderr);
+  eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {
+    try {
+      await access(`_lilypond/${id}.ly`);
+    } catch {
+      await writeFile(`_lilypond/${id}.ly`, content);
     }
-  }));
+
+    let svg = null;
+    try {
+      svg = await readFile(`_lilypond/${id}.svg`, 'utf-8');
+    } catch {
+      const { stderr } = await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `_lilypond/${id}`, `_lilypond/${id}.ly`]);
+      if (!stderr) {
+        await rm(`_lilypond/${id}.svg`);
+        await rename(`_lilypond/${id}.cropped.svg`, `_lilypond/${id}.svg`);
+      }
+      svg = await readFile(`_lilypond/${id}.svg`, 'utf-8');
+    }
+
+    return svg;
+  });
 }
