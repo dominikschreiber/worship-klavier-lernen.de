@@ -1,6 +1,6 @@
 ---
-title: Töne
-layout: page.njk
+title: 01 Töne
+date: 2025-10-02
 ---
 
 ## Impuls

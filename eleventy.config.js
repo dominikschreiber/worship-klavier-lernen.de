@@ -24,6 +24,8 @@ function durationToString(ms) {
 export default function (eleventyConfig) {
   eleventyConfig.setInputDirectory('src');
 
+  eleventyConfig.addGlobalData('layout', 'page.njk');
+
   eleventyConfig.addPassthroughCopy('**/*.css');
 
   eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {

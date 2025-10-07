@@ -1,6 +1,6 @@
 ---
-title: Intervalle
-layout: page.njk
+title: 02 Intervalle
+date: 2025-10-16
 ---
 
 ## Impuls

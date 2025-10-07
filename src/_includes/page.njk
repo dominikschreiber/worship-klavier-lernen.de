@@ -1,20 +1,19 @@
----
-title: Worship Klavier lernen
----
-
 <!doctype html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="/bundle.css">
-</head>
+{% include 'head.njk' %}
 
 <body>
-  <h1>{{ title }}</h1>
-  {{ content | safe }}
+  <main>
+    <nav>
+      <a href="{{ '/' | url }}">⌂</a>
+    </nav>
+    <header>
+      <h1>{{ title }}</h1>{%- if (page.date) -%}
+      <p>{{ page.date.getDate() }}. {{ ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'][page.date.getMonth()] }} {{ page.date.getFullYear() }}</p>{%- endif -%}
+    </header>
+    {{ content | safe }}
+  </main>
 </body>
 
 </html>
