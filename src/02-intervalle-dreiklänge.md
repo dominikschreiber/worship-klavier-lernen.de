@@ -9,6 +9,8 @@ Zehntausend Gründe
 
 ## Impuls
 
+3 Wochen/Oktober: Grundlage, warum wir der Bibel glauben können, und warum wir alles darin auf uns persönlich beziehen dürfen, ja müssen.
+
 > Denn alle Schrift, von Gott eingegeben, ist nütze zur Lehre, zur Zurechtweisung, zur Besserung, zur Erziehung in der Gerechtigkeit, dass der Mensch Gottes vollkommen sei, zu allem guten Werk geschickt.  
 > (2. Timotheus 3,16-17)
 
@@ -22,6 +24,8 @@ Zehntausend Gründe
     - auch die, die mir schwer verdaulich scheint
 
 ## Theorie
+
+(TJPB S.1-12)
 
 ### Intervalle
 
