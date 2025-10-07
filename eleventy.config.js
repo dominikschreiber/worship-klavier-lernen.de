@@ -39,8 +39,6 @@ export default function (eleventyConfig) {
     ]);
 
     const lyFile = `${LILYPOND_DIR}/${id}.ly`;
-    const svgFile = `${SVG_DIR}/${id}.svg`;
-    const croppedSvgFile = `${SVG_DIR}/${id}.cropped.svg`;
 
     let shouldWriteLy = true;
     let shouldExec = true;
@@ -48,14 +46,9 @@ export default function (eleventyConfig) {
     try {
       const lyContent = await readFile(lyFile, 'utf-8');
 
-      if (lyContent) {
-        const lyHash = hash('sha256', lyContent);
-        const contentHash = hash('sha256', content);
-
-        if (lyHash === contentHash) {
-          shouldWriteLy = false;
-          shouldExec = false;
-        }
+      if (lyContent === content) {
+        shouldWriteLy = false;
+        shouldExec = false;
       }
     } catch { }
 
@@ -63,6 +56,7 @@ export default function (eleventyConfig) {
       await writeFile(lyFile, content);
     }
 
+    const svgFile = `${SVG_DIR}/${id}.svg`;
     try {
       if (!shouldExec) {
         await access(svgFile);
@@ -71,18 +65,40 @@ export default function (eleventyConfig) {
       shouldExec = true;
     }
 
+    let svgContent;
+
     if (shouldExec) {
+      const croppedSvgFile = `${SVG_DIR}/${id}.cropped.svg`;
       await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `${SVG_DIR}/${id}`, `${LILYPOND_DIR}/${id}.ly`]);
       const croppedSvgContent = await readFile(croppedSvgFile, 'utf-8');
-      const svgContent = optimize(croppedSvgContent, { path: svgFile }).data;
+      svgContent = optimize(croppedSvgContent, { path: svgFile }).data;
       await Promise.all([
         writeFile(svgFile, svgContent),
         rm(croppedSvgFile)
       ]);
     }
 
+    if (!svgContent) {
+      svgContent = await readFile(svgFile, 'utf-8');
+    }
+
+    const url = `assets/svg/${id}.svg`;
+    const outputSvgFile = `${this.eleventy.directories.output}${url}`;
+    let shouldCopy = true;
+    try {
+      const outputSvgContent = await readFile(outputSvgFile, 'utf-8');
+
+      if (outputSvgContent === svgContent) {
+        shouldCopy = false;
+      }
+    } catch { }
+
+    if (shouldCopy) {
+      await writeFile(outputSvgFile, svgContent);
+    }
+
     console.log(`${shouldWriteLy ? '📦 compiled' : shouldExec ? '♻️ recompiled' : '☕️ served'} ${id}.ly in ${durationToString(new Date().valueOf() - before.valueOf())}`);
 
-    return `\n\n<img src="/assets/svg/${id}.svg" class="lilypond" alt="${id}"/>\n\n`;
+    return `\n\n<img src="/${url}" class="lilypond" alt="${id}"/>\n\n`;
   });
 }
