@@ -12,6 +12,7 @@ const HOURS = 60 * MINUTES;
 const DAYS = 24 * HOURS;
 
 const LILYPOND_DIR = '_lilypond';
+const SVG_DIR = 'src/assets/svg';
 
 function durationToString(ms) {
   return ms > DAYS ? `${Math.floor(ms / DAYS)}d ${durationToString(ms - Math.floor(ms / DAYS) * DAYS)}`
@@ -27,19 +28,19 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData('layout', 'page.njk');
 
   eleventyConfig.addPassthroughCopy('**/*.css');
+  eleventyConfig.addPassthroughCopy('**/*.svg');
 
   eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {
     const before = new Date();
 
-    try {
-      await access(LILYPOND_DIR);
-    } catch {
-      await mkdir(LILYPOND_DIR, { recursive: true });
-    }
+    await Promise.all([
+      access(LILYPOND_DIR).catch(() => mkdir(LILYPOND_DIR, { recursive: true })),
+      access(SVG_DIR).catch(() => mkdir(SVG_DIR, { recursive: true }))
+    ]);
 
     const lyFile = `${LILYPOND_DIR}/${id}.ly`;
-    const svgFile = `${LILYPOND_DIR}/${id}.svg`;
-    const croppedSvgFile = `${LILYPOND_DIR}/${id}.cropped.svg`;
+    const svgFile = `${SVG_DIR}/${id}.svg`;
+    const croppedSvgFile = `${SVG_DIR}/${id}.cropped.svg`;
 
     let shouldWriteLy = true;
     let shouldExec = true;
@@ -70,24 +71,18 @@ export default function (eleventyConfig) {
       shouldExec = true;
     }
 
-    let svgContent;
-
     if (shouldExec) {
-      await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `${LILYPOND_DIR}/${id}`, `${LILYPOND_DIR}/${id}.ly`]);
+      await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `${SVG_DIR}/${id}`, `${LILYPOND_DIR}/${id}.ly`]);
       const croppedSvgContent = await readFile(croppedSvgFile, 'utf-8');
-      svgContent = optimize(croppedSvgContent, { path: svgFile }).data;
+      const svgContent = optimize(croppedSvgContent, { path: svgFile }).data;
       await Promise.all([
         writeFile(svgFile, svgContent),
         rm(croppedSvgFile)
       ]);
     }
 
-    if (!svgContent) {
-      svgContent = readFile(svgFile, 'utf-8');
-    }
-
     console.log(`${shouldWriteLy ? '📦 compiled' : shouldExec ? '♻️ recompiled' : '☕️ served'} ${id}.ly in ${durationToString(new Date().valueOf() - before.valueOf())}`);
 
-    return svgContent;
+    return `\n\n<img src="/assets/svg/${id}.svg" class="lilypond" alt="${id}"/>\n\n`;
   });
 }
