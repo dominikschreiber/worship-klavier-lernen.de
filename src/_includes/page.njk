@@ -11,6 +11,7 @@
       <p>{{ page.date.getDate() }}. {{ ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'][page.date.getMonth()] }} {{ page.date.getFullYear() }}</p>{%- endif -%}
     </header>
     {{ content | safe }}
+    {% include 'next.njk' %}
   </main>
 </body>
 

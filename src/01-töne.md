@@ -145,4 +145,4 @@ Heute ist die Übung ähnlich dem Auftakt: höre das Worship-Lied "Zehntausend G
 
 ---
 
-<sup id="1">1</sup> Ich verwende die mittlerweile auch im Deutschen gebräuchliche "amerikanische" Schreibweise. {% chord "Db" %} spricht man "Des" aus (die schwarze Taste zwischen C und D), {% chord "D#" %} "Dis" (die schwarze Taste zwischen D und E). Insbesondere spricht man {% chord "B" %} als "H" aus (die weiße Taste) und {% chord "Bb" %} als "B" (die schwarze). <a href="#obertone">zurück</a>
+<sup id="1">1</sup> Ich verwende die mittlerweile auch im Deutschen gebräuchliche "amerikanische" Schreibweise. {% chord "Db" %} spricht man "Des" aus (die schwarze Taste zwischen C und D), {% chord "D#" %} "Dis" (die schwarze Taste zwischen D und E). Insbesondere spricht man {% chord "B" %} als "H" aus (die weiße Taste) und {% chord "Bb" %} als "B" (die schwarze). <a href="#obertone">&olarr;</a>

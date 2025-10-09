@@ -1,0 +1,22 @@
+{%- set first = null -%}
+{%- set current = false -%}
+{%- set next = null -%}
+{%- for post in collections.all -%}
+  {%- if first -%}
+  {%- else -%}
+    {%- set first = post -%}
+  {%- endif -%}
+  {%- if current -%}
+    {%- set next = post -%}
+    {%- set current = false -%}
+  {%- endif -%}
+  {%- if post.url == page.url -%}
+    {%- set current = true -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if next -%}
+{%- else -%}
+  {%- set next = first -%}
+{%- endif -%}
+<hr>
+<p><i>Lies weiter:</i> <a href="{{ next.url | url }}" title="{{ next.data.title | safe }}">{{ next.data.title | safe }}</a></p>
