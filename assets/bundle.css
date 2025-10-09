@@ -1,9 +1,15 @@
 body {
+  margin: 0;
   line-height: 1.5;
   font-size: 1.25rem;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   hyphens: auto;
   text-align: justify;
+  padding-block-end: 4rem;
+
+  &.no-cookie-banner-accepted {
+    padding-block-end: initial;
+  }
 }
 
 blockquote {
@@ -15,6 +21,7 @@ blockquote {
 }
 
 main {
+  margin-block: 1em;
   max-width: min(70ch, 100% - 4rem);
   margin-inline: auto;
 }
@@ -47,6 +54,10 @@ table {
     padding-block: .25em;
     padding-inline: .5em;
   }
+}
+
+button:not([disabled]) {
+  cursor: pointer;
 }
 
 .youtube {
@@ -89,5 +100,19 @@ table {
 
   sup {
     letter-spacing: initial;
+  }
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: .5em 1em;
+  background-color: #fffc;
+  backdrop-filter: blur(.25rem);
+  border: .0625em solid currentColor;
+
+  body.no-cookie-banner-accepted & {
+    display: none;
   }
 }
