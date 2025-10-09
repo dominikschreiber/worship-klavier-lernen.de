@@ -26,7 +26,7 @@ Ich als Pianist wollte lange nicht zu meinem Klavierspiel singen – auch heute 
 
 Verse wie der aus Psalm 71 gaben und geben mir die Freiheit, mich damit nicht geistlich "minderwertig" zu fühlen. Mein Lobpreis ist nicht nur in meinen (gesungenen) Worten, mein Lobpreis ist mein Saitenspiel (am Klavier eher ein Tastenspiel).
 
-Das nimmt mich nicht aus der Verantwortung, mich meinem Lobpreis _bewusst_ zu nähern. Auch ohne gesungene Worte will ich mir vor Augen führen, dass ich auf Gottes Eigenschaften reagiere. Aber du und ich, wir sind frei darin, alles dafür zu nutzen, was der Schöpfer in uns angelegt hat – auch Finger und Tasten.
+Das nimmt mich nicht aus der Verantwortung, mich meinem Lobpreis _bewusst_ zu nähern. Auch ohne gesungene Worte will ich mir vor Augen führen, dass ich auf Gottes Eigenschaften reagiere. Aber du und ich, wir sind frei darin, alles dafür zu nutzen, was der Schöpfer in uns angelegt hat – auch Finger und Tasten.
 
 ## Theorie
 
@@ -58,12 +58,12 @@ Fast nie jedoch schwingt bei einem Ton nur eine einzelne Frequenz. Mit einer Gru
 
 Zu unserem A4 mit 440Hz klingen also
 
-- 440Hz &times; 2 = 880Hz (A)
-- 440Hz &times; 3 = 1320Hz (E)
-- 440Hz &times; 4 = 1760Hz (A)
-- 440Hz &times; 5 = 2200Hz (C#)
-- 440Hz &times; 6 = 2640Hz (E)
-- 440Hz &times; 7 = 3080Hz (G)
+- 440Hz &times; 2 = 880Hz ({% chord "A" %})
+- 440Hz &times; 3 = 1320Hz ({% chord "E" %})
+- 440Hz &times; 4 = 1760Hz ({% chord "A" %})
+- 440Hz &times; 5 = 2200Hz ({% chord "C#" %}<sup><a href="#1">1</a></sup>)
+- 440Hz &times; 6 = 2640Hz ({% chord "E" %})
+- 440Hz &times; 7 = 3080Hz ({% chord "G" %})
 - […] 440Hz &times; n
 
 {%- lilypond "obertöne" -%}
@@ -78,36 +78,71 @@ Zu unserem A4 mit 440Hz klingen also
 
 In dieser Obertonreihe lassen sich Intervalle als _Verhältnisse von Frequenzen_ beobachten:
 
-- <sup>2</sup>&frasl;<sub>1</sub>: Oktave (<sup>880Hz</sup>&frasl;<sub>440Hz</sub>)
-- <sup>3</sup>&frasl;<sub>2</sub>: Quinte (<sup>1320Hz</sup>&frasl;<sub>880Hz</sub>)
-- <sup>4</sup>&frasl;<sub>3</sub>: Quarte (<sup>1760Hz</sup>&frasl;<sub>1320Hz</sub>)
+- {% frac 2 1 %}: Oktave (z.B. {% frac "880Hz (A5)" "440Hz (A4)" %})
+- {% frac 3 2 %}: Quinte (z.B. {% frac "1320Hz (E)" "880Hz (A5)" %})
+- {% frac 4 3 %}: Quarte (z.B. {% frac "1760Hz (A6)" "1320Hz (E)" %})
+- {% frac 5 4 %}: große Terz (z.B. {% frac "2200Hz (C&sharp;)" "1760Hz (A)" %})
+- {% frac 6 5 %}: kleine Terz (z.B. {% frac "2640Hz (E)" "2200Hz (C&sharp;)" %})
+- […] ({% frac "n" "n-1" %})
+- <sup>2<sup><sup>1</sup>&frasl;<sub>12</sub></sup></sup>&frasl;<sub>1</sub>: Halbton (bei wohltemperierter Stimmung)
 
-- Ein (hörbarer) "Ton": für heute eine Welle mit einer Frequenz zwischen 20Hz und 20000Hz
-- Frequenzverhältnisse bestimmen Intervalle:
-    - 2:1: Oktave
-    - 3:2: Quinte
-    - 4:3: Quarte
-    - 5:4: Große Terz
-    - 6:5: Kleine Terz
-    - 2^(1/12):1: Halbton (ca 1.05946:1)
-- 12 Halbtöne wegen "Quintenzirkel": (3:2)^12 ~ 2^7 (minus pythagoreisches Komma)
-- Obertonreihe:
-    - Grundton + n*Grundton (A2 110Hz, A3 220Hz, E4 330Hz, A4 440Hz, C#5 550Hz, E5 660Hz, G5 770Hz)
-    - bestimmt Klangfarbe (Timbre) des Intruments
-- Würde man die 12 Halbtöne so oft oktavieren, dass sie vom hörbaren (20Hz-20kHz) Spektrum ins sichtbare (384-789THz) Spektrum kommen, bekäme man (nach 39-40 Oktaven) folgende Farben:
-    - A: orange/rötlich
-    - A#/Bb: gelb/orange
-    - B: gelb/grünlich
-    - C: grün
-    - C#/Db: grün/cyan
-    - D: blau/grünlich-blau
-    - D#/Eb: blau/violettt
-    - E: violett
-    - F: tiefes violett, fast UV
-    - F#/Gb: rot
-    - G: rot/orange
-    - G#/Ab: dunkelrot/orange-rot
+### 12 Halbtöne
+
+Die Einteilung in 12 Halbtonschritte ist in gewissem Sinne willkürlich gewählt, Verhältnisse von Frequenzen ließen sich auch anders einteilen.
+
+Aber sie ist nicht völlig willkürlich, dank des _Quintenzirkels_ (denn ({% frac 3 2 %})<sup>12</sup> (= 129.746) &approx; 2<sup>7</sup> (= 128)): geht man von einem Ton aus immer eine Quinte nach oben (also erhöht man die Frequenz um das {% frac 3 2 %}-fache), landet man nach 12 Tönen wieder beim ursprünglichen Ton (nur 7 Oktaven höher):
+
+{% chord "C" %} &rarr; {% chord "G" %}  &rarr; {% chord "D" %} &rarr; {% chord "A" %} &rarr; {% chord "E" %} &rarr; {% chord "B" %} &rarr; {% chord "F#" %}/{% chord "Gb" %} &rarr; {% chord "Db" %} &rarr; {% chord "Ab" %} &rarr; {% chord "Eb" %} &rarr; {%chord "Bb" %} &rarr; {% chord "F" %} &rarr; {% chord "C" %}
+
+{%- lilypond "12-halbtöne" -%}
+\score {
+  \language "deutsch"
+  <<
+    \relative c' {
+        c1 g'
+        \ottava #1 d' a'
+        \ottava #2 e' h'
+        \ottava #3 fis'2 ges des'1
+        \ottava #4 as' es'
+        \ottava #5 \set Staff.ottavation = #"36" b' f'
+        \ottava #6 \set Staff.ottavation = #"43" c'
+    }
+  >>
+}
+{%- endlilypond -%}
+
+### Frequenzen außerhalb des hörbaren Bereichs
+
+Der hörbare Bereich von 20Hz bis 20000Hz ist natürlich nicht alles.
+
+Würde man die 12 Halbtöne in den sichtbaren Bereich (zwischen Infrarot mit 384THz und Ultraviolett mit 789THz) "hochoktavieren" (immer weiter verdoppeln), bekämen Töne eine "Farbe". Andersherum könnte man sie auch so lang "herunteroktavieren" (immer weiter halbieren), bis sie in den Bereich eines Rhythmus mit 70-150 "beats-per-minute" kämen:
+
+| Ton                                | Farbe (verdoppeln)                                     | bpm (halbieren) |
+|------------------------------------|--------------------------------------------------------|-----------------|
+| {% chord "E" %}                    | {% squircle "#C80000" %}rot{% endsquircle %}         | 77              |
+| {% chord "F" %}                    | {% squircle "#F30000" %}rot-orange{% endsquircle %}  | 82              | 
+| {% chord "F#" %}, {% chord "Gb" %} | {% squircle "#FF7800" %}orange{% endsquircle %}      | 87              |
+| {% chord "G" %}                    | {% squircle "#FFEF00" %}gelb{% endsquircle %}        | 92              |
+| {% chord "G#" %}, {% chord "Ab" %} | {% squircle "#AAFF00" %}gelbgrün{% endsquircle %}    | 97              |
+| {% chord "A" %}                    | {% squircle "#3AFF00" %}grün{% endsquircle %}        | 103             |
+| {% chord "A#" %}, {% chord "Bb" %} | {% squircle "#00FFEC" %}cyan{% endsquircle %}        | 109             |
+| {% chord "B" %}                    | {% squircle "#008FFF" %}hellblau{% endsquircle %}    | 116             |
+| {% chord "C" %}                    | {% squircle "#1000FF" %}dunkelblau{% endsquircle %}  | 123             |
+| {% chord "C#" %}, {% chord "Db" %} | {% squircle "#7800E8" %}blau-violett{% endsquircle %}| 130             |
+| {% chord "D" %}                    | {% squircle "#7A008E" %}violett{% endsquircle %}     | 138             |
+| {% chord "D#" %}, {% chord "Eb" %} | {% squircle "#980000" %}tief violett{% endsquircle %}| 146             |
 
 ## Übung
 
+Heute ist die Übung ähnlich dem Auftakt: höre das Worship-Lied "Zehntausend Gründe" im Lauf der kommenden Woche _aktiv_. Achte bei jedem Mal auf etwas anderes. Zum Beispiel:
+
+- Wie ist die _Form_? Welche Elemente gibt es? Welche werden wiederholt, welche tauchen nur einmal auf?
+- Welches _Instrument_ spielt was? Höre auch E-Gitarre, Akustik-Gitarre und den anderen zu.
+- Wie entwickelt sich die _Dynamik_ des Stücks? Wann ist es laut, wann ist es leise? Was macht welches Instrument, um die Dynamik anzupassen?
+- Vergleiche mit deiner _eigenen Erfahrung_: Hast du dieses Lied schon mitgesungen? Vielleicht selbst gespielt? Was von dem, was du herausgefunden hast, könntest du umsetzen?
+
 {%- youtube "4TXFigcT27A" "Zehntausend Gründe - Outbreakband | Glaubenszentrum Live (German Cover of 10000 Reasons)" -%}
+
+---
+
+<sup id="1">1</sup> Ich verwende die mittlerweile auch im Deutschen gebräuchliche "amerikanische" Schreibweise. {% chord "Db" %} spricht man "Des" aus (die schwarze Taste zwischen C und D), {% chord "D#" %} "Dis" (die schwarze Taste zwischen D und E). Insbesondere spricht man {% chord "B" %} als "H" aus (die weiße Taste) und {% chord "Bb" %} als "B" (die schwarze). <a href="#obertone">zurück</a>

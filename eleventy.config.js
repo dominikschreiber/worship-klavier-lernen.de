@@ -4,6 +4,7 @@ import { dirname } from 'node:path';
 import { hash } from 'node:crypto';
 import { writeFile, readFile, rm, access, mkdir } from 'node:fs/promises';
 import { optimize } from 'svgo';
+import anchor from 'markdown-it-anchor';
 
 const execFileAsync = promisify(execFile);
 
@@ -34,8 +35,26 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('**/*.css');
   eleventyConfig.addPassthroughCopy('**/*.svg');
 
+  eleventyConfig.amendLibrary('md', mdlib => mdlib.use(anchor, {
+    slugify: eleventyConfig.getFilter('slug')
+  }));
+
+  eleventyConfig.addShortcode('chord', async function (chord) {
+    const [, root, flatSharp = '', mod = ''] = /^([A-G])([b#])?(.*)$/.exec(chord);
+
+    return `<span class="chord${flatSharp === 'b' ? ' chord--flat' : ''}">${root}${flatSharp === 'b' ? '&flat;' : flatSharp === '#' ? '&sharp;' : ''}${mod ? `<sup>${mod}</sup>` : ''}</span>`;
+  });
+
+  eleventyConfig.addShortcode('frac', async function (sup, sub) {
+    return `<sup>${sup}</sup>&frasl;<sub>${sub}</sub>`;
+  });
+
   eleventyConfig.addShortcode('youtube', async function (id, title = 'YouTube video player') {
     return `\n\n<div class="youtube"><iframe src="https://www.youtube.com/embed/${id}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>\n\n`;
+  });
+
+  eleventyConfig.addPairedShortcode('squircle', async function (content, bg) {
+    return `<span class="squircle" style="--bg: ${bg}">${content}</span>`;
   });
 
   eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {
