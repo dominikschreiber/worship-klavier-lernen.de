@@ -2,7 +2,7 @@
   "name": "worship-klavier-lernen.de",
   "private": true,
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
     "markdown-it-anchor": "^9.2.0",
