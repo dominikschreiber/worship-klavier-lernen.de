@@ -30,11 +30,57 @@ Das nimmt mich nicht aus der Verantwortung, mich meinem Lobpreis _bewusst_ zu n�
 
 ## Theorie
 
+Ich habe die erste Mathematik-Vorlesung meines Studiums als sehr prägend in Erinnerung: der Professor fing an einem Zustand komplett ohne Vorkenntnisse an – aber nach zwei Wochen hatten wir den Stoff bis zum Abitur hinter uns. Wer bis dahin etwas nicht verstanden hatte, konnte immer zu den Definitionen und Erklärungen bis dahin zurück, und sich den Inhalt tiefergehend erarbeiten.
+
+So möchte auch ich in diesen Workshop starten: "bei null", und dann rasant anziehen. "Bei null" ist die Frage: _Was ist eigentlich ein Ton?_
+
+### Töne
+
+Und diese Frage lässt sich sehr mathematisch-physisch-naturwissenschaftlich beantworten. Darin wird klar, warum die alten Griechen Musik nicht zu den Künsten, sondern zu den Naturwissenschaften zählten.
+
+**Schwingt eine Welle in einer Frequenz zwischen 20Hz und 20000Hz, erzeugt sie einen hörbaren Ton.**
+
+Für die erste Betrachtung klammern wir andere Eigenschaften eines Tons (wie die Art der Welle, oder verschiedene Envelopes/Hüllkurven) getrost aus.
+
+Zunächst reicht: drückst du eine Taste an deinem Klavier, erzeugt das das Schwingen einer Welle mit der Frequenz der jeweiligen Tonhöhe. Z.B. erzeugt die Taste A4 eine Welle mit 440Hz.
+
 {% lilypond "töne" %}
 \score {
-  \relative c' {c1}
+  <<
+    \new Staff \with { instrumentName = "A4" } \relative c'' { a1 }
+  >>
 }
 {% endlilypond %}
+
+### Obertöne
+
+Fast nie jedoch schwingt bei einem Ton nur eine einzelne Frequenz. Mit einer Grundfrequenz klingen _Obertöne_, das _n_-fache der Grundfrequenz. Welcher Oberton wie laut klingt bestimmt die Klangfarbe ("Timbre") des Instruments – und macht damit einen großen Teil dessen aus, wie das Instrument klingt.
+
+Zu unserem A4 mit 440Hz klingen also
+
+- 440Hz &times; 2 = 880Hz (A)
+- 440Hz &times; 3 = 1320Hz (E)
+- 440Hz &times; 4 = 1760Hz (A)
+- 440Hz &times; 5 = 2200Hz (C#)
+- 440Hz &times; 6 = 2640Hz (E)
+- 440Hz &times; 7 = 3080Hz (G)
+- […] 440Hz &times; n
+
+{%- lilypond "obertöne" -%}
+\score {
+    <<
+        \new Staff \with {instrumentName="Obertöne von A4"} \relative c'' {<a a' e' a cis e g>1}
+    >>
+}
+{%- endlilypond -%}
+
+### Intervalle
+
+In dieser Obertonreihe lassen sich Intervalle als _Verhältnisse von Frequenzen_ beobachten:
+
+- <sup>2</sup>&frasl;<sub>1</sub>: Oktave (<sup>880Hz</sup>&frasl;<sub>440Hz</sub>)
+- <sup>3</sup>&frasl;<sub>2</sub>: Quinte (<sup>1320Hz</sup>&frasl;<sub>880Hz</sub>)
+- <sup>4</sup>&frasl;<sub>3</sub>: Quarte (<sup>1760Hz</sup>&frasl;<sub>1320Hz</sub>)
 
 - Ein (hörbarer) "Ton": für heute eine Welle mit einer Frequenz zwischen 20Hz und 20000Hz
 - Frequenzverhältnisse bestimmen Intervalle:
