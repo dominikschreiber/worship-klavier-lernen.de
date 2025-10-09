@@ -53,4 +53,4 @@ date: 2025-10-23
 
 ## Übung
 
-{%- youtube "cdqmRJDsrc8" "Keiner ist wie du (Live)" -%}
+{%- youtube "XgMq-0cD8Lc" "Keiner ist wie du" -%}

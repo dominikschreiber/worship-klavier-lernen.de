@@ -5,7 +5,7 @@ date: 2025-10-30
 
 ## Auftakt
 
-{%- youtube "cdqmRJDsrc8" "Keiner ist wie du (Live)" -%}
+{%- youtube "XgMq-0cD8Lc" "Keiner ist wie du" -%}
 
 ## Impuls
 
