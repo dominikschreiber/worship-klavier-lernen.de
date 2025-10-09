@@ -30,6 +30,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addGlobalData('layout', 'page.njk');
 
+  eleventyConfig.addPassthroughCopy('**/CNAME');
   eleventyConfig.addPassthroughCopy('**/*.css');
   eleventyConfig.addPassthroughCopy('**/*.svg');
 
