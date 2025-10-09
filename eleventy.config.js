@@ -24,6 +24,8 @@ function durationToString(ms) {
 }
 
 export default function (eleventyConfig) {
+  const urlFilter = eleventyConfig.getFilter('url');
+
   eleventyConfig.setInputDirectory('src');
 
   eleventyConfig.addGlobalData('layout', 'page.njk');
@@ -101,6 +103,6 @@ export default function (eleventyConfig) {
 
     console.log(`${shouldWriteLy ? '📦 compiled' : shouldExec ? '♻️ recompiled' : '☕️ served'} ${id}.ly in ${durationToString(new Date().valueOf() - before.valueOf())}`);
 
-    return `\n\n<img src="/${url}" class="lilypond" alt="${id}"/>\n\n`;
+    return `\n\n<img src="${urlFilter('/' + url)}" class="lilypond" alt="${id}"/>\n\n`;
   });
 }

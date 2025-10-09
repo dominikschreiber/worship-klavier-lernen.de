@@ -2,7 +2,7 @@
   "name": "worship-klavier-lernen.de",
   "private": true,
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "@11ty/eleventy": "^3.1.2",
     "netlify-plugin-cache": "^1.0.3",
