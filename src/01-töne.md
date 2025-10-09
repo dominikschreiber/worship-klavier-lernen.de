@@ -51,4 +51,4 @@ date: 2025-10-02
 
 ## Übung
 
-Zehntausend Gründe
+{%- youtube "4TXFigcT27A" "Zehntausend Gründe - Outbreakband | Glaubenszentrum Live (German Cover of 10000 Reasons)" -%}

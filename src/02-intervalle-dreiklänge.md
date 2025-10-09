@@ -5,7 +5,7 @@ date: 2025-10-16
 
 ## Auftakt
 
-Zehntausend Gründe
+{%- youtube "4TXFigcT27A" "Zehntausend Gründe - Outbreakband | Glaubenszentrum Live (German Cover of 10000 Reasons)" -%}
 
 ## Impuls
 
@@ -103,4 +103,4 @@ Zehntausend Gründe
 
 ## Übung
 
-Das glaube ich
+{%- youtube "qcYN-VeGuSQ" "Das Glaube Ich Lyric Video - Hillsong Worship" -%}

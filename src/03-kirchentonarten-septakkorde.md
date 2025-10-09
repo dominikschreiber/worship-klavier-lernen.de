@@ -5,7 +5,7 @@ date: 2025-10-23
 
 ## Auftakt
 
-Das glaube ich
+{%- youtube "qcYN-VeGuSQ" "Das Glaube Ich Lyric Video - Hillsong Worship" -%}
 
 ## Impuls
 
@@ -53,4 +53,4 @@ Das glaube ich
 
 ## Übung
 
-Keiner ist wie du
+{%- youtube "cdqmRJDsrc8" "Keiner ist wie du (Live)" -%}
