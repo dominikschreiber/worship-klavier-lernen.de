@@ -1,5 +1,6 @@
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
+import { dirname } from 'node:path';
 import { hash } from 'node:crypto';
 import { writeFile, readFile, rm, access, mkdir } from 'node:fs/promises';
 import { optimize } from 'svgo';
@@ -86,6 +87,7 @@ export default function (eleventyConfig) {
     const outputSvgFile = `${this.eleventy.directories.output}${url}`;
     let shouldCopy = true;
     try {
+      await mkdir(dirname(outputSvgFile), { recursive: true });
       const outputSvgContent = await readFile(outputSvgFile, 'utf-8');
 
       if (outputSvgContent === svgContent) {
