@@ -1,0 +1,6 @@
+<nav>{%- if page.url == '/' -%}
+  <span aria-current="page" title="Inhaltsverzeichnis">Inhalt</span>{%- else -%}
+  <a href="{{ '/' | url }}">Inhalt</a>{%- endif -%}{%- set i = 1 -%}{%- for post in collections.all -%}{%- if post.url == page.url -%}
+  <span aria-current="page" title="{{ post.data.title | safe }}">{{ i }}</span>{%- else -%}
+  <a href="{{ post.url | url }}" title="{{ post.data.title | safe}}">{{ i }}</a>{%- endif -%}{%- set i = i+1 -%}{%- endfor -%}
+</nav>
