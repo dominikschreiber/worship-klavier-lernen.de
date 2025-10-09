@@ -5,7 +5,7 @@ date: 2025-10-02
 
 ## Auftakt
 
-Ströme Lebendigen Wassers (Glaubenszentrum)
+{%- youtube "2zol2H87GTM" "Ströme des Lebendigen Wassers (Live)" -%}
 
 ## Impuls
 

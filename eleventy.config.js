@@ -33,6 +33,10 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('**/*.css');
   eleventyConfig.addPassthroughCopy('**/*.svg');
 
+  eleventyConfig.addShortcode('youtube', async function (id, title = 'YouTube video player') {
+    return `\n\n<div class="youtube"><iframe src="https://www.youtube.com/embed/${id}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>\n\n`;
+  });
+
   eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {
     const before = new Date();
 
