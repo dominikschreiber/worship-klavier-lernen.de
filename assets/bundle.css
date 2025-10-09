@@ -35,6 +35,20 @@ header {
   }
 }
 
+table {
+  border-collapse: collapse;
+
+  thead {
+    border-bottom: .0625em solid currentColor;
+  }
+
+  td,
+  th {
+    padding-block: .25em;
+    padding-inline: .5em;
+  }
+}
+
 .youtube {
   position: relative;
   padding-bottom: 56.25%;
@@ -47,5 +61,33 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
+  }
+}
+
+.squircle {
+  --displacement: .8em;
+
+  display: inline-block;
+  padding-inline: .25em;
+  color: oklch(from var(--bg) clamp(0, (l / 0.623 - 1) * -infinity, 1) 0 0);
+  background-color: var(--bg);
+  clip-path: shape(from 0 var(--displacement),
+      curve to var(--displacement) 0 with 0 0 / 0 0,
+      hline to calc(100% - var(--displacement)),
+      curve to 100% var(--displacement) with 100% 0 / 100% 0,
+      vline to calc(100% - var(--displacement)),
+      curve to calc(100% - var(--displacement)) 100% with 100% 100% / 100% 100%,
+      hline to var(--displacement),
+      curve to 0 calc(100% - var(--displacement)) with 0 100% / 0 100%,
+      close);
+}
+
+.chord {
+  &.chord--flat {
+    letter-spacing: -.3em;
+  }
+
+  sup {
+    letter-spacing: initial;
   }
 }
