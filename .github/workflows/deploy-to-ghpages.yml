@@ -33,6 +33,7 @@ jobs:
           path: ./.cache
           key: ${{ runner.os }}-eleventy-fetch-cache
 
+      - run: apt-get install lilypond
       - run: npm install
       - run: npx @11ty/eleventy --pathprefix=/worship-klavier-lernen.de/
 
