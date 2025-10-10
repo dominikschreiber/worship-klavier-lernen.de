@@ -2,6 +2,7 @@
 title: 01 Töne
 date: 2025-10-02
 ---
+Persönlicher Lobpreis mit Tasten statt Worten, die Definition von Tönen als Frequenzen und daraus folgend Obertöne und Intervalle durch Rechnen mit diesen Frequenzen – darum geht es in dieser ersten Einheit. Außerdem geht sie etwas detailierter auf die vier Abschnitte jeder Einheit ein: ein Lied als Auftakt, ein theologischer Impuls, Musiktheorie, und ihre praktische Übung.<!-- excerpt -->
 
 ## Auftakt
 

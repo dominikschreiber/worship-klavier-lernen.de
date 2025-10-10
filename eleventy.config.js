@@ -27,6 +27,11 @@ function durationToString(ms) {
 export default function (eleventyConfig) {
   const urlFilter = eleventyConfig.getFilter('url');
 
+  eleventyConfig.setFrontMatterParsingOptions({
+    excerpt: true,
+    excerpt_separator: '<!-- excerpt -->'
+  });
+
   eleventyConfig.setInputDirectory('src');
 
   eleventyConfig.addGlobalData('layout', 'page.njk');

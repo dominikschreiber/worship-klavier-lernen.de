@@ -5,6 +5,8 @@ date: 2025-10-16
 
 ## Auftakt
 
+Als Übung letzte Woche hast du "Zehntausend Gründe" gehört. Hör zu Beginn noch einmal das Lied, und hör aktiv zu: was von dem, was du letzte Woche entdeckt hast, ist dir am eindrücklichsten in Erinnerung geblieben?
+
 {%- youtube "4TXFigcT27A" "Zehntausend Gründe - Outbreakband | Glaubenszentrum Live (German Cover of 10000 Reasons)" -%}
 
 ## Impuls
