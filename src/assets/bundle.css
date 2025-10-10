@@ -110,7 +110,7 @@ button:not([disabled]) {
   padding: .5em 1em;
   background-color: #fffc;
   backdrop-filter: blur(.25rem);
-  border: .0625em solid currentColor;
+  border-top: .0625em solid currentColor;
 
   body.no-cookie-banner-accepted & {
     display: none;
