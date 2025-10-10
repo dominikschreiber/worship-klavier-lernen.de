@@ -47,7 +47,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode('chord', async function (chord) {
     const [, root, flatSharp = '', mod = ''] = /^([A-G])([b#])?(.*)$/.exec(chord);
 
-    return `<span class="chord${flatSharp === 'b' ? ' chord--flat' : ''}">${root}${flatSharp === 'b' ? '&flat;' : flatSharp === '#' ? '&sharp;' : ''}${mod ? `<sup>${mod}</sup>` : ''}</span>`;
+    return `<span class="chord${flatSharp === 'b' ? ' chord--flat' : ''}">${root}${flatSharp === 'b' ? '&flat;' : flatSharp === '#' ? '&sharp;' : ''}${mod ? `<sup>${mod.replace(/#/g, '&sharp;').replace(/b/g, '&flat;')}</sup>` : ''}</span>`;
   });
 
   eleventyConfig.addShortcode('frac', async function (sup, sub) {
