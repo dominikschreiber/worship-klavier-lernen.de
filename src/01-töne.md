@@ -62,7 +62,7 @@ Zu unserem A4 mit 440Hz klingen also
 - 440Hz &times; 2 = 880Hz ({% chord "A" %})
 - 440Hz &times; 3 = 1320Hz ({% chord "E" %})
 - 440Hz &times; 4 = 1760Hz ({% chord "A" %})
-- 440Hz &times; 5 = 2200Hz ({% chord "C#" %}<sup><a href="#1">1</a></sup>)
+- 440Hz &times; 5 = 2200Hz ({% chord "C#" %}<sup>[1](#1)</sup>)
 - 440Hz &times; 6 = 2640Hz ({% chord "E" %})
 - 440Hz &times; 7 = 3080Hz ({% chord "G" %})
 - […] 440Hz &times; n
@@ -146,4 +146,4 @@ Heute ist die Übung ähnlich dem Auftakt: höre das Worship-Lied "Zehntausend G
 
 ---
 
-<sup id="1">1</sup> Ich verwende die mittlerweile auch im Deutschen gebräuchliche "amerikanische" Schreibweise. {% chord "Db" %} spricht man "Des" aus (die schwarze Taste zwischen C und D), {% chord "D#" %} "Dis" (die schwarze Taste zwischen D und E). Insbesondere spricht man {% chord "B" %} als "H" aus (die weiße Taste) und {% chord "Bb" %} als "B" (die schwarze). <a href="#obertone">&olarr;</a>
+<sup id="1">1</sup> Ich verwende die mittlerweile auch im Deutschen gebräuchliche "amerikanische" Schreibweise. {% chord "Db" %} spricht man "Des" aus (die schwarze Taste zwischen C und D), {% chord "D#" %} "Dis" (die schwarze Taste zwischen D und E). Insbesondere spricht man {% chord "B" %} als "H" aus (die weiße Taste) und {% chord "Bb" %} als "B" (die schwarze). [&olarr;](#obertone)

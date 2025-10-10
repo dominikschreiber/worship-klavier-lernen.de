@@ -11,25 +11,77 @@ Als Übung letzte Woche hast du "Zehntausend Gründe" gehört. Hör zu Beginn no
 
 ## Impuls
 
-3 Wochen/Oktober: Grundlage, warum wir der Bibel glauben können, und warum wir alles darin auf uns persönlich beziehen dürfen, ja müssen.
+Über die nächsten drei Einheiten will ich theologisch den Schwerpunkt darauf legen, dass und warum wir dem Wort der Bibel glauben können, warum wir Jesu Zusagen auf uns beziehen dürfen, und warum wir als Christen die Zu- und Aussagen des Volkes Israel auf uns beziehen dürfen.
 
 > Denn alle Schrift, von Gott eingegeben, ist nütze zur Lehre, zur Zurechtweisung, zur Besserung, zur Erziehung in der Gerechtigkeit, dass der Mensch Gottes vollkommen sei, zu allem guten Werk geschickt.  
 > (2. Timotheus 3,16-17)
 
-- Occams Razor:
-    - Entweder dieser Vers stimmt, und alle Schrift ist von Gott eingegeben; dann müssen wir alle Schrift ernst nehmen
-    - Oder er stimmt nicht, dann müssen wir jeden Vers einzeln hinterfragen
-- Beobachtung in meinem Leben: so vieles stimmt, dass die Wahrscheinlichkeit, dass der Vers stimmt, größer ist als die, dass er nicht stimmt
-- Also: alle Schrift erst nehmen:
-    - auch die, die ich nicht erklären kann
-    - auch die, die ich nicht erlebe
-    - auch die, die mir schwer verdaulich scheint
+Dieser Vers hat meiner Reise in die Bibel einen Kickstart gegeben: entweder alle Schrift ist von Gott eingegeben, oder nicht. Stimmt dieser Vers, muss ich alle Schrift ernst nehmen – _alle_ Schrift. Stimmt er nicht, muss ich jeden Vers einzeln hinterfragen.
+
+In meinem Leben habe ich oft genug Gottes Gegenwart, Gottes Liebe und Gottes Wirken erlebt, dass ich mit Sicherheit sagen kann: der Vers kann nicht _nicht_ stimmen.
+
+Stimmt er aber, dann stimmt er nicht nur für mich, sondern auch für dich.
+
+Und stimmt er für dich, heißt das, du kannst – musst – _alle_ Schrift ernst nehmen:
+
+- Auch die, die du nicht erklären kannst.
+- Auch die, die du nicht erlebst.
+- Auch die, die dir schwer verdaulich erscheint.
+
+Es gibt einen sehr treffenden Spruch (ich habe ihn von [Kris Vallotton](https://krisvallotton.com)):
+
+> Die Bibel ist geschrieben mit der Annahme, dass der Leser mit dem Autor redet.
+
+Das ist entscheidend: du wirst nicht jedes Wort, nicht jeden Gedankengang, nicht jeden Zusammenhang verstehen; erst Recht nicht auf Anhieb. Das soll so sein! Dann nimm diese Grundlage, um mit Gott über deine Situation ins Gespräch zu kommen: _Vater, ich verstehe etwas nicht, kannst du es mir erklären?_
+
+Und dann werde still, und höre zu.
 
 ## Theorie
 
-(TJPB S.1-12)
+In der letzten Einheit haben wir Töne als Frequenzen von Wellen kennengelernt, und bereits in den Obertönen einer Grundfrequenz die verschiedenen Intervalle gefunden. Heute tauchen wir tiefer in Intervalle ein, kehren sie um, erzeugen Dreiklänge, und kehren wiederum die um<sup>[1](#1)</sup>.
 
 ### Intervalle
+
+Das Verhältnis zweier Töne zueinander nennt man _Intervall_.
+
+Bei der Bezeichnung eines Intervalls geht man erst mal vom Verhältnis innerhalb der _sieben Grundtöne_ A, B, C, D, E, F, und G aus. Das bestimmt den "Namen" des Intervalls, angefangen bei
+
+- 1 (Prime)
+- 2 (Sekunde)
+- 3 (Terz)
+- 4 (Quarte)
+- 5 (Quinte)
+- 6 (Sexte)
+- 7 (Septime)
+- 8 (Oktave)
+- 9 (None)
+- 10 (Dezime)<sup>[2](#2)</sup>
+
+{% lilypond "grundintervalle" %}
+\score {
+  <<
+    \new Staff \with {instrumentName = "1 (Prime)"} \relative c' {<c c>1}
+    \new Staff \with {instrumentName = "2 (Sekunde)"} \relative c' {<c d>1}
+    \new Staff \with {instrumentName = "3 (Terz)"} \relative c' {<c e>1}
+    \new Staff \with {instrumentName = "4 (Quarte)"} \relative c' {<c f>1}
+    \new Staff \with {instrumentName = "5 (Quinte)"} \relative c' {<c g'>1}
+    \new Staff \with {instrumentName = "6 (Sexte)"} \relative c' {<c a'>1}
+    \new Staff \with {instrumentName = "7 (Septime)"} \relative c' {<c b'>1}
+    \new Staff \with {instrumentName = "8 (Oktave)"} \relative c' {<c c'>1}
+    \new Staff \with {instrumentName = "9 (None)"} \relative c' {<c d'>1}
+    \new Staff \with {instrumentName = "10 (Dezime)"} \relative c' {<c e'>1}
+  >>
+}
+{% endlilypond %}
+
+Die sieben Grundtöne können mit &flat; und &sharp; angepasst werden (auch mit mehreren):
+
+- Jedes &flat; _verringert_ den Grundton um einen Halbtonschritt. (C &rarr; {% chord "D#" %} = 3 Halbtonschritte)
+- Jedes &sharp; _erhöht_ den Grundton um einen Halbtonschritt. (C &rarr; {% chord "Db" %} = 1 Halbtonschritt)
+
+Intervalle, die nur einmal in der Obertonreihe vorkommen – das sind die am Anfang: Prime, Oktave, Quinte und Quarte – gibt es nur in einer Form: sie sind _rein_. Alle anderen – Terz, Sekunde, Sexte und Septime – gibt es zweimal: _groß_ und _klein_ (wobei groß einen Halbtonschritt mehr umfasst als klein). Das gilt auch für ihre "Oktavierungen": Sekunde und None z.B. sind beide _groß_ und _klein_, Quarte und Undezime sind beide _rein_.
+
+Wird ein Intervall über rein, groß und klein weiter vergrößert, spricht man von (n-fach) _übermäßig_, wird es weiter verkleinert, spricht man von (n-fach) _vermindert_.
 
 {% lilypond "intervalle" %}
 \language "deutsch"
@@ -61,6 +113,12 @@ Als Übung letzte Woche hast du "Zehntausend Gründe" gehört. Hör zu Beginn no
 
 ### Umkehr von Intervallen
 
+Wie man mit Tönen rechnen kann, so auch mit Intervallen: Innerhalb einer Oktave lassen sich Intervalle _umkehren_. Man nimmt den unteren Ton und oktaviert ihn nach oben (oder andersherum). Dabei ergeben sich folgende "Rechenregeln":
+
+- das neue Grundintervall ergibt sich als: _9 (None) - das alte Grundintervall_, z.B. 9 (None) - 3 (Terz) = 6 (Sexte)
+- rein bleibt _rein_ (reine 5 (Quinte) &rarr; reine 4 (Quarte))
+- klein und groß _dreht sich um_ (große 3 (Terz) &rarr; kleine 6 (Sexte), kleine 2 (Sekunde) &rarr; große 7 (Septime))
+
 {%- lilypond "umkehrintervalle" -%}
 \score {
   <<
@@ -72,12 +130,14 @@ Als Übung letzte Woche hast du "Zehntausend Gründe" gehört. Hör zu Beginn no
 }
 {%- endlilypond -%}
 
-- groß->klein
-- klein->groß
-- rein->rein
-- None (9) - altes Intervall (x) = neues Intervall (y)
-
 ### Dreiklänge
+
+Schichtet man zwei Terzen übereinander – so dass der obere Ton der unteren Terz wiederum der untere Ton der oberen Terz ist – so erhält man einen _Dreiklang_. Da es große und kleine Terzen gibt, ergeben sich 2&times;2=4 Möglichkeiten:
+
+- große Terz + kleine Terz = _Dur_
+- kleine Terz + große Terz = _Moll_
+- kleine Terz + kleine Terz = _Vermindert_
+- große Terz + große Terz = _Übermäßig_
 
 {%- lilypond "dreiklänge" -%}
 \score {
@@ -90,19 +150,74 @@ Als Übung letzte Woche hast du "Zehntausend Gründe" gehört. Hör zu Beginn no
 }
 {%- endlilypond -%}
 
-- Dreiklänge: zwei Terzen übereinandergeschichtet:
-  - Dur: große Terz + kleine Terz
-  - Moll: kleine Terz + große Terz
-  - Vermindert: kleine Terz + kleine Terz
-  - Übermäßig: große Terz + große Terz
-
 ### Umkehr von Dreiklängen
 
-- Umkehr von Dreiklängen: Akkord, bei dem nicht der Grundton ganz unten ist
-    - Grundstellung: C-E-G (G oben => Quintlage)
-    - erste Umkehrung: E-G-C (C oben => Oktavlage)
-    - zweite Umkehrung: G-C-E (E oben => Terzlage)
+Wie schon Intervalle, so lassen sich auch _Dreiklänge umkehren_: hierbei wird wahlweise der Grundton oder die unteren beiden Töne einmal hoch oktaviert. So erreicht man drei verschiedene Stellungen:
+
+- Grundstellung: C-E-G (G oben => Quintlage)
+- erste Umkehrung: E-G-C (C oben => Oktavlage)
+- zweite Umkehrung: G-C-E (E oben => Terzlage)
+
+{%- lilypond "umkehrdreiklänge" -%}
+\score {
+  <<
+    \new Staff \with {instrumentName = "Grundstellung (Quintlage)"} \relative c' {<c e g>1}
+    \new Staff \with {instrumentName = "erste Umkehrung (Oktavlage)"} \relative c' {<e g c>1}
+    \new Staff \with {instrumentName = "zweite Umkehrung (Terzlage)"} \relative c'' {<g c e>1}
+  >>
+}
+{%- endlilypond -%}
+
+**Dreiklänge beliebig umkehren zu können ist eine unschätzbare Eigenschaft am Klavier.**
+
+Du brauchst dies ständig, um "schöne Tonführungen" zu erreichen: Übergänge von einem Akkord zum nächsten, bei denen sich _möglichst wenig_ ändert.
 
 ## Übung
 
+Lass dir das Umkehren von Dreiklängen in Fleisch und Blut übergehen: Nimm die verschiedenen Umkehrungen von C-Dur, und gehe für jede _rückwärts durch den Quintenzirkel_ – und achte auf schöne Tonführung, das heißt auf möglichst wenig Änderungen.
+
+{%- lilypond "dreiklang-umkehr-übung" -%}
+\score {
+  <<
+    \new ChordNames {\chordmode {
+      c2 f bes
+      es as des
+      gis4~ fis b2 e
+      a g d
+      c
+    }}
+    \new Staff \with {instrumentName = "Grundstellung"} \relative c' {
+      <c e g>2 <c f a> <d f bes>
+      <es g bes> <es as c> <f as des>
+      <ges bes des>4~ <fis ais cis> <fis b dis>2 <gis b e>
+      <a cis e> <a d fis> <b d g>
+      <c e g>
+    }
+    \new Staff \with {instrumentName = "erste Umkehrung"} \relative c' {
+      <e g c>2 <f a c> <f bes d>
+      <g bes es> <as c es> <as des f>
+      <bes des ges>4~ <ais cis fis> <b dis fis>2 <b e gis>
+      <cis e a> <d fis a> <d g b>
+      <e g c>
+    }
+    \new Staff \with {instrumentName = "zweite Umkehrung"} \relative c' {
+      <g' c e>2 <a c f> <bes d f>
+      <bes es g> <c es as> <des f as>
+      <des ges bes>4~ <cis fis ais> <dis fis b>2 <e gis b>
+      <e a cis> <fis a d> <g b d>
+      <g c e>
+    }
+  >>
+}
+
+{%- endlilypond -%}
+
+Übe diese Umkehrungen in der kommenden Woche. Und, einmal mehr, höre aktiv. Diesmal das Worship-Lied "Das glaube ich".
+
 {%- youtube "qcYN-VeGuSQ" "Das Glaube Ich Lyric Video - Hillsong Worship" -%}
+
+---
+
+<sup id="1">1</sup> Viele musikalische Grundlagen findest du in mehr Detail im Buch "The Jazz Piano Book" von Mark Levine (ISBN 9780961470159). Die heutige Einheit greift Kapitel I auf, die Seiten 1-12. [&olarr;](#theorie)
+
+<sup id="2">2</sup> Intervalle ließen sich beliebig weiter zählen und benennen; im Deutschen entstammen ihre Namen dem Lateinischen. In der Praxis gehen wir selten über eine 10 (Dezime) hinaus, die passt grade noch in große Pianisten-Hände. [&olarr;](#intervalle)
