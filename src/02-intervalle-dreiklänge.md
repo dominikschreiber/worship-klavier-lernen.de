@@ -2,6 +2,7 @@
 title: 02 Intervalle, Dreiklänge
 date: 2025-10-16
 ---
+"Alle Schrift, von Gott eingegeben[…]", so beginnt die Grundlage dafür, dass wir der ganzen Bibel Glauben schenken. In dieser Einheit tauchen wir in diese Überlegung ein. Außerdem führen wir Intervalle, Umkehr von Intervallen, Dreiklänge, und die Umkehr von Dreiklängen ein.<!-- excerpt -->
 
 ## Auftakt
 
