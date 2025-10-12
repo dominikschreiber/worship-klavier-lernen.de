@@ -9,10 +9,25 @@ date: 2025-10-23
 
 ## Impuls
 
+In der letzten Einheit haben wir die Grundlage dafür gelegt, dem ganzen Wort der Bibel zu glauben. Heute sehen wir, warum die Bibel so persönlich ist – und du sie auf dich beziehen darfst.
+
 >  Und Jesus trat herzu, redete mit ihnen und sprach: Mir ist gegeben alle Gewalt im Himmel und auf Erden. Darom gehet hin und lehret alle Völker: Taufet sie auf den Namen des Vaters, des Sohnes und des Heiligen Geistes und lehret sie halten alles, was ich euch befohlen habe. Und siehe, ich bin bei euch alle Tage bis an der Welt Ende.  
 > (Matthäus 28,18-20)
 
-- Jesu Lehre ist transitiv: weil die Jünger lehren sollen, alles zu halten, was Jesus ihnen befohlen hat, gilt die Bibel auch mir ganz persönlich
+Mit diesem Auftrag sendet Jesus seine Jünger, und beendet damit das Matthäus-Evangelium. Für uns heute ist ein Element darin besonders hervorstechend: "lehret sie halten alles, was ich euch befohlen habe".
+
+Jesus lehrte seine Jünger, und _alles_, was er sie gelehrt hat, sollten sie auch ihre "Jünger" lehren. Auch: alles, was Jesus gelehrt hat, weiter zu lehren. Deren "Jüngern" ging es genauso, und auch der Generation vor dir, _und auch dir_ gilt Jesu Lehre und Jesu Auftrag.
+
+So ist Jesu Lehre _transitiv_: sie kommt genauso bei dir an, wie sie von Jesus ausgegangen ist. Ganz persönlich, als hätte Jesus genau nur zu dir gesprochen.
+
+Wenn Jesus also in Johannes 10,27 sagt
+
+> Meine Schafe hören meine Stimme, und ich kenne sie und sie folgen mir  
+> (Johannes 10,27)
+
+dann spricht er ganz persönlich von _dir_: du _hörst seine Stimme_, er _kennt dich_ und du _folgst ihm_. Wenn du Jesus als den Herrn Deines Lebens angenommen hast, was das Beste ist, was du tun kannst.
+
+Und wie diesen Vers kannst du jeden anderen Vers herausnehmen, und überlegen, was er für dich ganz persönlich bedeutet. Rede mit Jesus darüber, er kennt dich, und du hörst seine Stimme – dein Gebet ist keine Einbahnstraße, erwarte eine Antwort!
 
 ## Theorie
 
