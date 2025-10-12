@@ -9,8 +9,9 @@ date: 2025-10-30
 
 ## Impuls
 
-> Wenn nun einige von den Zweigen ausgebrochen wurden, du aber, der du ein wilder Ölzweig bist, in den Ölbaum eingepropft wurdest und Anteil bekommen hast an der Wurzel und dem Saft des Ölbaums, so rühme dich nicht gegenüber den Zweigen. Rühmst du dich aber, so sollst du wissen: Nicht du trägst die Wurzel, sondern die Wurzel trägt dich.  
-> (Römer 11,17-18)
+{%- cite "Römer 11,17-18" -%}
+Wenn nun einige von den Zweigen ausgebrochen wurden, du aber, der du ein wilder Ölzweig bist, in den Ölbaum eingepropft wurdest und Anteil bekommen hast an der Wurzel und dem Saft des Ölbaums, so rühme dich nicht gegenüber den Zweigen. Rühmst du dich aber, so sollst du wissen: Nicht du trägst die Wurzel, sondern die Wurzel trägt dich.
+{%- endcite -%}
 
 - Paulus spricht hier vom Volk Israel als Ölbaum, und dass wir Nicht-Juden diesem Ölbaum eingepropft wurden
 - Das heißt, wir müssen alles, was die Bibel über das Volk Israel sagt, persönlich nehmen

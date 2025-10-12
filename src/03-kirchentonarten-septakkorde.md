@@ -11,8 +11,9 @@ date: 2025-10-23
 
 In der letzten Einheit haben wir die Grundlage dafür gelegt, dem ganzen Wort der Bibel zu glauben. Heute sehen wir, warum die Bibel so persönlich ist – und du sie auf dich beziehen darfst.
 
->  Und Jesus trat herzu, redete mit ihnen und sprach: Mir ist gegeben alle Gewalt im Himmel und auf Erden. Darom gehet hin und lehret alle Völker: Taufet sie auf den Namen des Vaters, des Sohnes und des Heiligen Geistes und lehret sie halten alles, was ich euch befohlen habe. Und siehe, ich bin bei euch alle Tage bis an der Welt Ende.  
-> (Matthäus 28,18-20)
+{%- cite "Matthäus 28,18-20" -%}
+Und Jesus trat herzu, redete mit ihnen und sprach: Mir ist gegeben alle Gewalt im Himmel und auf Erden. Darom gehet hin und lehret alle Völker: Taufet sie auf den Namen des Vaters, des Sohnes und des Heiligen Geistes und lehret sie halten alles, was ich euch befohlen habe. Und siehe, ich bin bei euch alle Tage bis an der Welt Ende.
+{%- endcite -%}
 
 Mit diesem Auftrag sendet Jesus seine Jünger, und beendet damit das Matthäus-Evangelium. Für uns heute ist ein Element darin besonders hervorstechend: "lehret sie halten alles, was ich euch befohlen habe".
 
@@ -22,8 +23,9 @@ So ist Jesu Lehre _transitiv_: sie kommt genauso bei dir an, wie sie von Jesus a
 
 Wenn Jesus also sagt
 
-> Meine Schafe hören meine Stimme, und ich kenne sie und sie folgen mir  
-> (Johannes 10,27)
+{%- cite "Johannes 10,27" -%}
+Meine Schafe hören meine Stimme, und ich kenne sie und sie folgen mir;
+{%- endcite -%}
 
 dann spricht er ganz persönlich von _dir_: du _hörst seine Stimme_, er _kennt dich_ und du _folgst ihm_. Wenn du Jesus als den Herrn Deines Lebens angenommen hast, was das Beste ist, was du tun kannst.
 

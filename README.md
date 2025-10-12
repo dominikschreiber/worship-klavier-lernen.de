@@ -34,6 +34,21 @@ In a previous version, it directly returned the `<svg>` content from lilypond, t
 
 The downside is, that the SVGs do not support dark mode now.
 
+### `cite` paired shortcode
+
+```njk
+{%- cite "John 3,16" -%}
+For God so loved the world,[9] that he gave his only Son, that whoever believes in him should not perish but have eternal life.
+{%- endcite -%}
+<!-- results in -->
+<blockquote class="cite">
+  <p>For God so loved the world,[9] that he gave his only Son, that whoever believes in him should not perish but have eternal life.</p>
+  <footer>John 3,16</footer>
+</blockquote>
+```
+
+A blockquote with a reference set to the bottom right.
+
 ### `chord` shortcode
 
 ```njk

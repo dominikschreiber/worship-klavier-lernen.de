@@ -14,8 +14,9 @@ Als Übung letzte Woche hast du "Zehntausend Gründe" gehört. Hör zu Beginn no
 
 Über die nächsten drei Einheiten will ich theologisch den Schwerpunkt darauf legen, dass und warum wir dem Wort der Bibel glauben können, warum wir Jesu Zusagen auf uns beziehen dürfen, und warum wir als Christen die Zu- und Aussagen des Volkes Israel auf uns beziehen dürfen.
 
-> Denn alle Schrift, von Gott eingegeben, ist nütze zur Lehre, zur Zurechtweisung, zur Besserung, zur Erziehung in der Gerechtigkeit, dass der Mensch Gottes vollkommen sei, zu allem guten Werk geschickt.  
-> (2. Timotheus 3,16-17)
+{%- cite "2. Timotheus 3,16-17" -%}
+Denn alle Schrift, von Gott eingegeben, ist nütze zur Lehre, zur Zurechtweisung, zur Besserung, zur Erziehung in der Gerechtigkeit, dass der Mensch Gottes vollkommen sei, zu allem guten Werk geschickt.
+{%- endcite -%}
 
 Dieser Vers hat meiner Reise in die Bibel einen Kickstart gegeben: entweder alle Schrift ist von Gott eingegeben, oder nicht. Stimmt dieser Vers, muss ich alle Schrift ernst nehmen – _alle_ Schrift. Stimmt er nicht, muss ich jeden Vers einzeln hinterfragen.
 

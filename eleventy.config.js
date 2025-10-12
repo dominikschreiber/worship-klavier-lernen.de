@@ -62,6 +62,10 @@ export default function (eleventyConfig) {
     return `<span class="squircle" style="--bg: ${bg}">${content}</span>`;
   });
 
+  eleventyConfig.addPairedShortcode('cite', async function (content, reference) {
+    return `\n\n<blockquote class="cite"><p>${content}</p><footer>${reference}</footer></blockquote>\n\n`;
+  });
+
   eleventyConfig.addPairedShortcode('lilypond', async function (content, id = hash('sha256', content)) {
     const before = new Date();
 

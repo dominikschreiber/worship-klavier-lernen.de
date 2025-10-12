@@ -18,8 +18,9 @@ Liedbegleitung am Klavier ist vielfältig, und kann in den verschiedensten Berei
 
 Um dir dies näher zu bringen, werden wir jede Einheit mit einem Bibelvers starten, den ich im Hinblick auf Worship auslegen möchte.
 
-> So will auch ich dir danken mit Saitenspiel für deine Treue, mein Gott; ich will dir zur Harfe lobsingen du Heiliger Israels.  
-> (Psalm 71,22)
+{%- cite "Psalm 71,22" -%}
+So will auch ich dir danken mit Saitenspiel für deine Treue, mein Gott; ich will dir zur Harfe lobsingen du Heiliger Israels.
+{%- endcite -%}
 
 Worship ist eine Reaktion auf das, was ich in Gott erkenne. Wie David in Psalm 71 die Treue und Heiligkeit seines Gottes. Und schon von je her ist diese Reaktion _musikalisch_, im Saitenspiel und im Lobgesang zur Harfe.
 
