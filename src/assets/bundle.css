@@ -1,3 +1,7 @@
+html {
+  color-scheme: light dark;
+}
+
 body {
   margin: 0;
   line-height: 1.5;
@@ -26,7 +30,7 @@ blockquote {
   padding-block: 1em;
   padding-inline: 40px;
   border-radius: .5rem;
-  background-color: oklch(0 0 0 / .05);
+  background-color: oklch(from currentColor l 0 0 / .05);
 }
 
 main {
@@ -117,7 +121,7 @@ button:not([disabled]) {
   bottom: 0;
   width: 100%;
   padding: .5em 1em;
-  background-color: #fffc;
+  background-color: oklch(from currentColor clamp(0, (l / 0.623 - 1) * -infinity, 1) 0 0 / .68);
   backdrop-filter: blur(.25rem);
   border-top: .0625em solid currentColor;
 

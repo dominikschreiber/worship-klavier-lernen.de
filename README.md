@@ -28,11 +28,9 @@ npm start # npx @11ty/eleventy --serve, starts a livereload server at localhost:
 <img src="/assets/svg/scale.svg" class="lilypond" alt="scale">
 ```
 
-Compiles the content to an svg at `assets/svg/<id>.svg` and returns an `<img>` that references it.
+Compiles the content to an svg at `assets/svg/<id>.svg` (with an additional `:root{color-scheme:light dark}`) and returns an `<img>` that references it.
 
-In a previous version, it directly returned the `<svg>` content from lilypond, to inline it into the page. This has the advantage that the svg automatically works with `color-scheme: light dark`, because lilypond bases everything on `currentColor`. But the SVGs get large rather quickly, and inexplainable rendering errors appear, if they are inlined.
-
-The downside is, that the SVGs do not support dark mode now.
+In a previous version, it directly returned the `<svg>` content from lilypond, to inline it into the page. But the SVGs get large rather quickly, and inexplainable rendering errors appear, if they are inlined.
 
 ### `cite` paired shortcode
 
