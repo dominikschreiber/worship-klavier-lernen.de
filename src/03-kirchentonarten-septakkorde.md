@@ -31,11 +31,17 @@ dann spricht er ganz persönlich von _dir_: du _hörst seine Stimme_, er _kennt 
 
 Und wie diesen Vers kannst du jeden anderen Vers herausnehmen, und überlegen, was er für dich ganz persönlich bedeutet. Rede mit Jesus darüber, er kennt dich, und du hörst seine Stimme – dein Gebet ist keine Einbahnstraße, erwarte eine Antwort!
 
-## Theorie
-
-(TJPB S.13-16)
+<h2 id="theorie">Theorie<sup><a href="#1">1</a></sup></h2>
 
 ### Kirchentonarten
+
+Schichtet man so lang Quinten übereinander, bis man für jeden Grundton einen Ton aufgenommen hat, und "verdichtet" die Töne dann so, dass alle in eine Oktave passen, erhält man gerade sieben Töne; ausgehend von F z.B. F-C-G-D-A-E-B bzw. F-G-A-B-C-D-E.
+
+Von jedem dieser sieben Töne kann man nun 1x alle sieben durchgehen. Jeder "Startpunkt" führt zu anderen Intervallverhältnissen, daher zu ganz anderen Klangfarben.
+
+Aus historischen Gründen beginnen wir unsere Zählweise beim fünften Ton dieser Kette, und nicht beim ersten – denn diese Intervallverhältnisse nennen wir _Dur-Tonleiter_ (C-D-E-F-G-A-B).
+
+Doch schon die alten Griechen (insbesondere Pythagoras) verwendeten alle sieben "Kirchentonarten" (im Englischen "Modes"):
 
 {%- lilypond "kirchentonarten" -%}
 \score {
@@ -51,7 +57,9 @@ Und wie diesen Vers kannst du jeden anderen Vers herausnehmen, und überlegen, w
 }
 {%- endlilypond -%}
 
-- Durtonleiter, von jedem Ton aus begonnen
+In unserer westlichen Musik haben sich besonders _I (Ionisch)_ als _Dur-Tonleiter_ und _VI (Aeolisch)_ als _(Natürliche) Moll-Tonleiter_ etabliert.
+
+Doch gerade bei Akkorden und Akkord-Verbindungen tauchen alle sieben wieder auf: in der _Nashville-Notation_ notiert man nicht die konkreten Akkorde (C, Dm, G<sup>7</sup>, etc.), sondern nur die Funktion (I, IIm, V<sup>7</sup>, etc.) und einigt sich auf einen gemeinsamen Grundton (z.B. I = C).
 
 ### Septakkorde
 
@@ -71,3 +79,7 @@ Und wie diesen Vers kannst du jeden anderen Vers herausnehmen, und überlegen, w
 ## Übung
 
 {%- youtube "XgMq-0cD8Lc" "Keiner ist wie du" -%}
+
+---
+
+<sup id="1">1</sup> Die musikalischen Grundlagen dieser Einheit findest du vertieft in "The Jazz Piano Book" von Mark Levine (ISBN 9780961470159), in Kapitel 2 auf den Seiten 13-16. [&olarr;](#theorie)
