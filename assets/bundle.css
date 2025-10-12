@@ -125,3 +125,14 @@ button:not([disabled]) {
     display: none;
   }
 }
+
+.cite {
+  margin-block-end: 1em;
+
+  footer {
+    margin-block-end: 1em;
+    text-align: right;
+    font-size: .875em;
+    opacity: .75;
+  }
+}
