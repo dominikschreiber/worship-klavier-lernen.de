@@ -2,7 +2,7 @@
 title: 02 Intervalle, Dreiklänge
 date: 2025-10-16
 ---
-"Alle Schrift, von Gott eingegeben[…]", so beginnt die Grundlage dafür, dass wir der ganzen Bibel Glauben schenken. In dieser Einheit tauchen wir in diese Überlegung ein. Außerdem führen wir Intervalle, Umkehr von Intervallen, Dreiklänge, und die Umkehr von Dreiklängen ein.<!-- excerpt -->
+"Alle Schrift, von Gott eingegeben", so beginnt die Grundlage dafür, dass wir der ganzen Bibel Glauben schenken. In dieser Einheit tauchen wir in diese Überlegung ein. Außerdem führen wir Intervalle, Umkehr von Intervallen, Dreiklänge, und die Umkehr von Dreiklängen ein.<!-- excerpt -->
 
 ## Auftakt
 
@@ -45,18 +45,7 @@ In der letzten Einheit haben wir Töne als Frequenzen von Wellen kennengelernt, 
 
 Das Verhältnis zweier Töne zueinander nennt man _Intervall_.
 
-Bei der Bezeichnung eines Intervalls geht man erst mal vom Verhältnis innerhalb der _sieben Grundtöne_ A, B, C, D, E, F, und G aus. Das bestimmt den "Namen" des Intervalls, angefangen bei
-
-- 1 (Prime)
-- 2 (Sekunde)
-- 3 (Terz)
-- 4 (Quarte)
-- 5 (Quinte)
-- 6 (Sexte)
-- 7 (Septime)
-- 8 (Oktave)
-- 9 (None)
-- 10 (Dezime)<sup>[2](#2)</sup>
+Bei der Bezeichnung eines Intervalls geht man erst mal vom Abstand innerhalb der _sieben Grundtöne_ A, B, C, D, E, F, und G aus. Das bestimmt den "Namen" des Intervalls<sup>[2](#2)</sup>:
 
 {% lilypond "grundintervalle" %}
 \score {
@@ -77,8 +66,8 @@ Bei der Bezeichnung eines Intervalls geht man erst mal vom Verhältnis innerhalb
 
 Die sieben Grundtöne können mit &flat; und &sharp; angepasst werden (auch mit mehreren):
 
-- Jedes &flat; _verringert_ den Grundton um einen Halbtonschritt. (C &rarr; {% chord "D#" %} = 3 Halbtonschritte)
-- Jedes &sharp; _erhöht_ den Grundton um einen Halbtonschritt. (C &rarr; {% chord "Db" %} = 1 Halbtonschritt)
+- Jedes &flat; _verringert_ den Grundton um einen Halbtonschritt. (C &rarr; {% chord "Db" %} = 1 Halbtonschritt)
+- Jedes &sharp; _erhöht_ den Grundton um einen Halbtonschritt. (C &rarr; {% chord "D#" %} = 3 Halbtonschritte)
 
 Intervalle, die nur einmal in der Obertonreihe vorkommen – das sind die am Anfang: Prime, Oktave, Quinte und Quarte – gibt es nur in einer Form: sie sind _rein_. Alle anderen – Terz, Sekunde, Sexte und Septime – gibt es zweimal: _groß_ und _klein_ (wobei groß einen Halbtonschritt mehr umfasst als klein). Das gilt auch für ihre "Oktavierungen": Sekunde und None z.B. sind beide _groß_ und _klein_, Quarte und Undezime sind beide _rein_.
 
@@ -143,9 +132,13 @@ Schichtet man zwei Terzen übereinander – so dass der obere Ton der unteren Te
 {%- lilypond "dreiklänge" -%}
 \score {
   <<
+    \new ChordNames {\chordmode {c}}
     \new Staff \with {instrumentName = "Dur"} \relative c' {<c e g>}
+    \new ChordNames {\chordmode {c:m}}
     \new Staff \with {instrumentName = "Moll"} \relative c' {<c es g>}
+    \new ChordNames {\chordmode {c:dim}}
     \new Staff \with {instrumentName = "Vermindert"} \relative c' {<c es ges>}
+    \new ChordNames {\chordmode {c:aug}}
     \new Staff \with {instrumentName = "Übermäßig"} \relative c' {<c e gis>}
   >>
 }
@@ -162,8 +155,11 @@ Wie schon Intervalle, so lassen sich auch _Dreiklänge umkehren_: hierbei wird w
 {%- lilypond "umkehrdreiklänge" -%}
 \score {
   <<
+    \new ChordNames {\chordmode {c}}
     \new Staff \with {instrumentName = "Grundstellung (Quintlage)"} \relative c' {<c e g>1}
+    \new ChordNames {\chordmode {c}}
     \new Staff \with {instrumentName = "erste Umkehrung (Oktavlage)"} \relative c' {<e g c>1}
+    \new ChordNames {\chordmode {c}}
     \new Staff \with {instrumentName = "zweite Umkehrung (Terzlage)"} \relative c'' {<g c e>1}
   >>
 }
