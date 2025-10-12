@@ -20,7 +20,7 @@ Jesus lehrte seine Jünger, und _alles_, was er sie gelehrt hat, sollten sie auc
 
 So ist Jesu Lehre _transitiv_: sie kommt genauso bei dir an, wie sie von Jesus ausgegangen ist. Ganz persönlich, als hätte Jesus genau nur zu dir gesprochen.
 
-Wenn Jesus also in Johannes 10,27 sagt
+Wenn Jesus also sagt
 
 > Meine Schafe hören meine Stimme, und ich kenne sie und sie folgen mir  
 > (Johannes 10,27)
