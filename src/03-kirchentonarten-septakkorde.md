@@ -39,7 +39,7 @@ Schichtet man so lang Quinten übereinander, bis man für jeden Grundton einen T
 
 Von jedem dieser sieben Töne kann man nun 1x alle sieben durchgehen. Jeder "Startpunkt" führt zu anderen Intervallverhältnissen, daher zu ganz anderen Klangfarben.
 
-Aus historischen Gründen beginnen wir unsere Zählweise beim fünften Ton dieser Kette, und nicht beim ersten – denn diese Intervallverhältnisse nennen wir _Dur-Tonleiter_ (C-D-E-F-G-A-B).
+Wir beginnen unsere Zählweise beim fünften Ton dieser Kette, und nicht beim ersten – denn diese Intervallverhältnisse nennen wir _Dur-Tonleiter_ (C-D-E-F-G-A-B). Die hat einige musikalische Vorteile, z.B. den Halbton von B nach C, und eine reine Quarte, die sie ab dem Barock zur vorherrschenden Tonleiter der westlichen Musik gemacht haben.
 
 Doch schon die alten Griechen (insbesondere Pythagoras) verwendeten alle sieben "Kirchentonarten" (im Englischen "Modes"):
 
