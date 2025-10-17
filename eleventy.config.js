@@ -107,7 +107,7 @@ export default function (eleventyConfig) {
       const croppedSvgFile = `${SVG_DIR}/${id}.cropped.svg`;
       await execFileAsync('lilypond', ['--svg', '-dcrop', '--define-default', 'no-point-and-click', '--silent', '--output', `${SVG_DIR}/${id}`, `${LILYPOND_DIR}/${id}.ly`]);
       const croppedSvgContent = await readFile(croppedSvgFile, 'utf-8');
-      svgContent = optimize(croppedSvgContent.replace('<svg ', '<svg style="color-scheme:light dark" '), { path: svgFile }).data;
+      svgContent = optimize(croppedSvgContent, { path: svgFile }).data;
       await Promise.all([
         writeFile(svgFile, svgContent),
         rm(croppedSvgFile)
