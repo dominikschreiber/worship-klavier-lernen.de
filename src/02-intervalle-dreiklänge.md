@@ -74,30 +74,32 @@ Intervalle, die nur einmal in der Obertonreihe vorkommen – das sind die am Anf
 
 Wird ein Intervall über rein, groß und klein weiter vergrößert, spricht man von (n-fach) _übermäßig_, wird es weiter verkleinert, spricht man von (n-fach) _vermindert_.
 
+In der Praxis kann es helfen, Intervalle als _Anzahl von Halbtonschritten_ (HT) zu zählen. So hätte z.B. eine kleine 3 (Terz) drei Halbtonschritte, eine große jedoch vier.
+
 {% lilypond "intervalle" %}
 \language "deutsch"
 \score {
   <<
     \new Staff \with {instrumentName = "1 (Prime)"} \relative c' {<c ces>1 <c c> <c cis>}
-    \addlyrics { vermindert rein übermäßig }
+    \addlyrics { "vermindert (-1HT)" "rein (0HT)" "übermäßig (1HT)" }
     \new Staff \with {instrumentName = "2 (Sekunde)"} \relative c' {<c deses>1 <c des>2 <c d> <c dis>1}
-    \addlyrics { vermindert klein groß übermäßig }
+    \addlyrics { "vermindert (0HT)" "klein (1HT)" "groß (2HT)" "übermäßig (3HT)" }
     \new Staff \with {instrumentName = "3 (Terz)"} \relative c' {<c eses>1 <c es>2 <c e> <c eis>1}
-    \addlyrics { vermindert klein groß übermäßig }
+    \addlyrics { "vermindert (2HT)" "klein (3HT)" "groß (4HT)" "übermäßig (5HT)" }
     \new Staff \with {instrumentName = "4 (Quarte)"} \relative c' {<c fes>1 <c f> <c fis>}
-    \addlyrics { vermindert rein übermäßig }
+    \addlyrics { "vermindert (4HT)" "rein (5HT)" "übermäßig (6HT)" }
     \new Staff \with {instrumentName = "5 (Quinte)"} \relative c' {<c ges'>1 <c g'> <c gis'>}
-    \addlyrics { vermindert rein übermäßig }
+    \addlyrics { "vermindert (6HT)" "rein (7HT)" "übermäßig (8HT)" }
     \new Staff \with {instrumentName = "6 (Sexte)"} \relative c' {<c ases'>1 <c as'>2 <c a'> <c ais'>1}
-    \addlyrics { vermindert klein groß übermäßig }
+    \addlyrics { "vermindert (7HT)" "klein (8HT)" "groß (9HT)" "übermäßig (10HT)" }
     \new Staff \with {instrumentName = "7 (Septime)"} \relative c' {<c heses'>1 <c b'>2 <c h'> <c his'>1}
-    \addlyrics { vermindert klein groß übermäßig }
+    \addlyrics { "vermindert (9HT)" "klein (10HT)" "groß (11HT)" "übermäßig (12HT)" }
     \new Staff \with {instrumentName = "8 (Oktave)"} \relative c' {<c ces'>1 <c c'> <c cis'>}
-    \addlyrics { vermindert rein übermäßig }
+    \addlyrics { "vermindert (11HT)" "rein (12HT)" "übermäßig (13HT)" }
     \new Staff \with {instrumentName = "9 (None)"} \relative c' {<c deses'>1 <c des'>2 <c d'> <c dis'>1}
-    \addlyrics { vermindert klein groß übermäßig }
+    \addlyrics { "vermindert (12HT)" "klein (13HT)" "groß (14HT)" "übermäßig (15HT)" }
     \new Staff \with {instrumentName = "10 (Dezime)"} \relative c' {<c eses'>1 <c es'>2 <c e'> <c eis'>1}
-    \addlyrics { vermindert klein groß übermäßig }
+    \addlyrics { "vermindert (14HT)" "klein (15HT)" "groß (16HT)" "übermäßig (17HT)" }
   >>
 }
 {% endlilypond %}
